@@ -1,0 +1,24 @@
+<div class="bg-gray-900 min-h-screen text-white">
+  <div class="">
+    <h1>get todos here</h1>
+    <button
+      class="py-2 px-6 rounded-full bg-blue-600 cursor-pointer"
+      (click)="getTodos()"
+    >
+      get todos
+    </button>
+  </div>
+  <div>
+    <ul class="flex flex-col justify-between items-start gap-5 ml-20 mt-10">
+      @for (item of todosList; track $index) {
+      <div class="flex flex-col gap-2">
+        <li>Title: {{ item.title }}</li>
+        <li [class]="item.completed ? 'text-green-500' : 'text-red-500'">
+         <span class="text-white">Status</span>: {{ item.completed }}
+        </li>
+      </div>
+
+      }
+    </ul>
+  </div>
+</div>
